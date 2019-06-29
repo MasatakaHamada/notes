@@ -1,0 +1,23 @@
+\documentclass{jsarticle}
+\usepackage{amsmath, amssymb} % 数学記号のパッケージ
+
+% 定理などの番号付けに関するパッケージとその設定
+\usepackage{amsthm}
+\theoremstyle{definition}
+\newtheorem{qst}{問題}
+\newtheorem{rem}[qst]{注意}
+\renewcommand\proofname{\bf 解答} % proof環境の設定変更
+
+\begin{document}
+
+\begin{qst}
+実数列$\{a_n\}_{n=1}^\infty$に対して
+\[ \lim_{n\to\infty}\frac{a_n}{n}=0\Rightarrow\lim_{n\to\infty}a_n=0 \]
+は成り立つか．成り立つ場合は証明し，成り立たない場合は反例を挙げよ．
+\end{qst}
+\begin{proof}
+成り立たない．
+実際，数列$\{1\}_{n=1}^\infty$が反例である．
+\end{proof}
+
+\end{document}
