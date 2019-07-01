@@ -40,4 +40,47 @@ $x=\sqrt{n\pi}, y=\sqrt{n\pi+\pi/2}$のとき
 となるから，$f$は一様連続でない．
 \end{proof}
 
+\begin{qst}
+実数列$\{a_n\}_{n=1}^\infty$および$a\in\mathbb{R}$に対して
+\[ \lim_{n\to\infty}a_n=a\Leftrightarrow\{a_n\}_{n=1}^\infty の任意の部分列が a に収束する部分列を持つ \]
+が成り立つことを証明せよ．
+\end{qst}
+\begin{proof}
+($\Rightarrow$)
+$\{a_n\}_{n=1}^\infty$の任意の部分列が$a$に収束することから従う．
+
+($\Leftarrow$)
+対偶を証明する．
+すなわち，ある$\varepsilon>0$が存在して，任意の$N\geq1$に対して
+$n\geq N$かつ$|a_n-a|\geq\varepsilon$を満たす$n\geq1$が存在すると仮定する．
+各$N\geq1$に対して，$n\geq N$かつ$|a_n-a|\geq\varepsilon$を満たす$n\geq1$を
+ひとつ選び$n(N)$とおく．さらに，$A:=\{n(N):N\geq1\}$とし，
+数列$\{k(m)\}_{m=1}^\infty$を次のように定める:
+$k(1):=\min A$，$m\geq1$に対し$k(m+1):=\min(A\setminus\{k(1),\cdots,k(m)\})$．
+このとき，部分列$\{a_{k(m)}\}_{m=1}^\infty$はすべての$m\geq1$に対して
+$|a_{k(m)}-a|\geq\varepsilon$を満たすから，$a$に収束する部分列を持たない．
+\end{proof}
+
+\begin{qst}
+$\mathbb{N}$の空でない任意の部分集合$A$は最小値を持つことを証明せよ．
+\end{qst}
+\begin{proof}
+(1)
+$A$が有限集合であるとき，$n:=\sharp{A}$に関する帰納法で証明する．
+$n=1$のときは$a\in A$が最小値となり，
+$n=2$のときは，相異なる$a,b\in A$に対して$\min\{a,b\}$が最小値となる．
+$n=k\geq2$のとき，$A$の最小値が存在すると仮定する．
+$\sharp{A}=k+1$とすると，$a\in A$をひとつ選んで
+$A=\{a\}\cup B$，$\sharp{B}=k$と表せる．
+このとき$a\leq\min B$ならば$\min A=a$，そうでなければ$\min A=\min B$となる．
+よって，$n=k+1$のときも$A$の最小値が存在する．
+
+(2)
+$A$が無限集合であるとき，
+$n\in A$をひとつ取り$A_n:=\{a\in A:a<n\}$とおく．
+$A_n=\varnothing$ならば$n=\min A$である．
+$A_n\neq\varnothing$のとき，$A_n$は有限集合であるから
+(1)より$\min A_n$が存在し，$\min A=\min A_n$である．
+\end{proof}
+
 \end{document}
