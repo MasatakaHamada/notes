@@ -83,4 +83,20 @@ $A_n\neq\varnothing$のとき，$A_n$は有限集合であるから
 (1)より$\min A_n$が存在し，$\min A=\min A_n$である．
 \end{proof}
 
+\begin{qst}
+$x\in\mathbb{R}$に対して
+\[ \delta_x(B):=1_B(x)=\begin{cases}1 & (x\in B) \\ 0 & (x\notin B)\end{cases}，B\in\mathcal{B}(\mathbb{R}) \]
+と定める．このとき，$\delta_x$は$(\mathbb{R},\mathcal{B}(\mathbb{R}))$上の確率測度であることを示せ．
+なお，この$\delta_x$は$x$を台とするディラック測度と呼ばれる．
+\end{qst}
+\begin{proof}
+定義より$\delta_x(\mathbb{R})=1$かつ$B\in\mathcal{B}(\mathbb{R})$に対して$\delta_x(B)\geq0$である．
+$B_1,B_2,\cdots\in\mathcal{B}(\mathbb{R})$を$i\neq j$に対して$B_i\cap B_j=\varnothing$を満たすものとする．
+すべての$i$に対して$x\notin B_i$であるとき，
+\[ \delta_x\left(\bigcup_{i=1}^\infty B_i\right)=0=\sum_{i=1}^\infty\delta_x(B_i) \]
+である．また，ある$N$が存在して$x\in B_N$であるとき，$B_1,B_2,\cdots$の定義よりそのような$N$はただひとつであるから
+\[ \delta_x\left(\bigcup_{i=1}^\infty B_i\right)=1=\delta_x(B_N)=\sum_{i=1}^\infty\delta_x(B_i) \]
+である．
+\end{proof}
+
 \end{document}
