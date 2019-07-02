@@ -99,19 +99,31 @@ $B_1,B_2,\cdots\in\mathcal{B}(\mathbb{R})$を$i\neq j$に対して$B_i\cap B_j=\
 である．
 \end{proof}
 
-\begin{qst}
+\begin{qst}[未解決]
 $f\colon[0,\infty)\to\mathbb{R}$を$(0,\infty)$上連続な関数とする．このとき
 \[ \lim_{r\to+0, r\in\mathbb{Q}}f(r)=f(0) \Rightarrow \lim_{x\to+0}f(x)=f(0) \]
 が成り立つことを証明せよ（従って，$f$は$[0,\infty)$上連続となる）．
 \end{qst}
-\begin{proof}
+\begin{proof}[\textbf{誤答例}]
+0に収束する任意の非負実数列$\{x_n\}_{n=1}^\infty$に対して，
+$\{f(x_n)\}_{n=1}^\infty$が$f(0)$に収束することを示す．
+そのためには，$\{f(x_n)\}_{n=1}^\infty$の任意の部分列が
+$f(0)$に収束する部分列を有することを示せばよい．
+そこで，$\{f(x_k)\}_{k=1}^\infty$を$\{f(x_n)\}_{n=1}^\infty$の任意の部分列とする．
+このとき，
+\textbf{$\{x_k\}_{k=1}^\infty$から有理数である項を取り出して得られる部分列を$\{x_{k_l}\}_{l=1}^\infty$とする}と，
+仮定より$\{f(x_{k_l})\}_{l=1}^\infty$は$f(0)$に収束する．
+よって，$\{f(x_k)\}_{k=1}^\infty$に対して$f(0)$に収束する部分列が得られたので，結論が従う．
+\end{proof}
+\begin{proof}[\textbf{誤答例}]
 $\varepsilon>0$とする．
 仮定より，ある$\delta_1>0$が存在して，$0<r<\delta_1$を満たす任意の$r\in\mathbb{Q}$に対して
 $|f(r)-f(0)|<\varepsilon/2$を満たす．
 以下，このような$\delta_1$を固定し，さらに$0<r<\delta_1$を満たす$r\in\mathbb{Q}$を固定する．
 $f$は$(0,\infty)$上連続であるから，ある$\delta_2>0$が存在して，
 $|x-r|<\delta_2$を満たす任意の$x\in(0,\infty)$に対して$|f(x)-f(r)|<\varepsilon/2$を満たす．
-このとき，$\delta:=\min\{\delta_2-\delta_1,0\}$とおくと，$0<x<\delta$を満たす任意の$x\in(0,\infty)$に対して
+このとき，\textbf{$\delta:=\min\{\delta_2-\delta_1,0\}$とおく}と，
+$0<x<\delta$を満たす任意の$x\in(0,\infty)$に対して
 $|x-r|\leq x+r<\delta+\delta_1\leq\delta_2$となる．よって
 $|f(x)-f(0)|\leq|f(x)-f(r)|+|f(r)-f(0)|<\varepsilon/2+\varepsilon/2=\varepsilon$である．
 従って，結論が成り立つ．
