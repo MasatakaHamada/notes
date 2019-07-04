@@ -129,4 +129,27 @@ $|f(x)-f(0)|\leq|f(x)-f(r)|+|f(r)-f(0)|<\varepsilon/2+\varepsilon/2=\varepsilon$
 従って，結論が成り立つ．
 \end{proof}
 
+\begin{qst}
+区間$I$上の連続関数列$\{f_n\}_{n=1}^\infty$と
+$I$上の連続関数$f$に対して，次の2つの条件は同値であることを示せ．
+\begin{enumerate}
+\item$\{f_n\}_{n=1}^\infty$は$n\to\infty$のとき$I$上$f$に一様収束する．
+\item$\displaystyle\sup_{x\in I}|f_n(x)-f(x)|$は$n\to\infty$のとき0に収束する．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+(1$\Rightarrow$2)
+仮定より，任意の$\varepsilon>0$に対してある$N$が存在して，
+$n\geq N$ならば任意の$x\in I$に対して$|f_n(x)-f(x)|<\varepsilon$が成り立つ．
+よって，$n\geq N$ならば$\displaystyle\sup_{x\in I}|f_n(x)-f(x)|<\varepsilon$となる．
+従って，$\displaystyle\sup_{x\in I}|f_n(x)-f(x)|$は$n\to\infty$のとき0に収束する．
+
+(2$\Rightarrow$1)
+仮定より，任意の$\varepsilon>0$に対してある$N$が存在して，
+$n\geq N$ならば$\displaystyle\sup_{x\in I}|f_n(x)-f(x)|<\varepsilon$が成り立つ．
+よって，$n\geq N$ならば任意の$x\in I$に対して
+$|f_n(x)-f(x)|\leq\displaystyle\sup_{x\in I}|f_n(x)-f(x)|<\varepsilon$が成り立つ．
+従って，$\{f_n\}_{n=1}^\infty$は$n\to\infty$のとき$I$上$f$に一様収束する．
+\end{proof}
+
 \end{document}
