@@ -152,4 +152,49 @@ $|f_n(x)-f(x)|\leq\displaystyle\sup_{x\in I}|f_n(x)-f(x)|<\varepsilon$が成り�
 従って，$\{f_n\}_{n=1}^\infty$は$n\to\infty$のとき$I$上$f$に一様収束する．
 \end{proof}
 
+\begin{qst}
+$\|\cdot\|$をノルムに持つバナッハ空間$V$上のコーシー列$\{v_n\}$と
+任意の$\varepsilon>0$に対して，
+\[ m,n\geq N\Rightarrow\|v_m-v_n\|<\varepsilon \]
+を満たす自然数$N$を選ぶ．$\{v_n\}$の極限を$v$とするとき，
+\[ n\geq N\Rightarrow\|v-v_n\|\leq\varepsilon \]
+が成り立つことを証明せよ．
+\end{qst}
+\begin{proof}
+任意の$\varepsilon'>0$に対して，
+$m\geq M$ならば$\|v_m-v\|<\varepsilon'$となるような自然数$M$が存在する．
+よって，$m,n\geq\max\{M,N\}$ならば
+$\|v-v_n\|=\|(v_m-v_n)+(v-v_m)\|\leq\|v_m-v_n\|+\|v_m-v\|<\varepsilon+\varepsilon'$
+が成り立つ．
+ゆえに，$n\geq N$ならば$\|v-v_n\|<\varepsilon+\varepsilon'$が
+任意の$\varepsilon'>0$に対して成り立つ.
+このとき，もし$\|v-v_n\|>\varepsilon$であるとすると，
+$\varepsilon<\delta<\|v-v_n\|$なる実数$\delta$が存在する．
+この$\delta$に対して$\|v-v_n\|>\delta=\varepsilon+(\delta-\varepsilon)$となり，
+$\|v-v_n\|<\varepsilon+\varepsilon'$が
+任意の$\varepsilon'>0$に対して成り立つことに矛盾する．
+従って，$n\geq N\Rightarrow\|v-v_n\|\leq\varepsilon$が成り立つ．
+\end{proof}
+
+\begin{qst}
+実数列$\{a_n\}$と$a\in\mathbb{R}$に対して，次の2つの条件は同値であることを示せ．
+\begin{enumerate}
+\item$\displaystyle\lim_{n\to\infty}a_n=a$である．
+すなわち，任意の$\varepsilon>0$に対してある$N\in\mathbb{N}$が存在して，
+$n\geq N$ならば$|a_n-a|<\varepsilon$が成り立つ．
+\item 任意の$\varepsilon>0$に対してある$N\in\mathbb{N}$が存在して，
+$n\geq N$ならば$|a_n-a|\leq\varepsilon$が成り立つ．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+(1$\Rightarrow$2)
+$|a_n-a|<\varepsilon$ならば$|a_n-a|\leq\varepsilon$であることから従う．
+
+(2$\Rightarrow$1)
+$\varepsilon>0$とする．
+2より，ある$N\in\mathbb{N}$が存在して，
+$n\geq N$ならば$|a_n-a|\leq\varepsilon/2$が成り立つ．
+このとき，$\varepsilon/2<\varepsilon$より$|a_n-a|<\varepsilon$である．
+\end{proof}
+
 \end{document}
