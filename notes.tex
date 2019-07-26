@@ -197,4 +197,31 @@ $n\geq N$ならば$|a_n-a|\leq\varepsilon/2$が成り立つ．
 このとき，$\varepsilon/2<\varepsilon$より$|a_n-a|<\varepsilon$である．
 \end{proof}
 
+\begin{qst}
+集合$X$および$X$の部分集合列$A_1,A_2,\cdots$に対して次が成り立つことを示せ．
+\[ 1_{\limsup_{n\to\infty}A_n}(x)=\limsup_{n\to\infty}1_{A_n}(x)，
+1_{\liminf_{n\to\infty}A_n}(x)=\liminf_{n\to\infty}1_{A_n}(x) \]
+\end{qst}
+\begin{proof}
+以下
+$F=\displaystyle\limsup_{n\to\infty}A_n$，
+$G=\displaystyle\liminf_{n\to\infty}A_n$
+とおく．
+$x\in F$のとき，任意の$m\geq1$に対してある$n\geq m$が存在して$x\in A_n$を満たすから，
+\[ \limsup_{n\to\infty}1_{A_n}(x)=\inf_{m\geq1}\sup_{n\geq m}1_{A_n}(x)=1 \]
+である．
+$x\notin F$のとき，ある$m\geq1$が存在して$n\geq m$ならば$x\notin A_n$となるから，
+\[ \limsup_{n\to\infty}1_{A_n}(x)=\inf_{m\geq1}\sup_{n\geq m}1_{A_n}(x)=0 \]
+である．
+$x\in G$のとき，ある$m\geq1$が存在して$n\geq m$ならば$x\in A_n$となるから，
+\[ \liminf_{n\to\infty}1_{A_n}(x)=\sup_{m\geq1}\inf_{n\geq m}1_{A_n}(x)=1 \]
+である．
+$x\notin G$のとき，任意の$m\geq1$に対してある$n\geq m$が存在して$x\notin A_n$を満たすから，
+\[ \liminf_{n\to\infty}1_{A_n}(x)=\sup_{m\geq1}\inf_{n\geq m}1_{A_n}(x)=0 \]
+である．以上より
+\[ 1_{\limsup_{n\to\infty}A_n}(x)=\limsup_{n\to\infty}1_{A_n}(x)，
+1_{\liminf_{n\to\infty}A_n}(x)=\liminf_{n\to\infty}1_{A_n}(x) \]
+が成り立つ．
+\end{proof}
+
 \end{document}
