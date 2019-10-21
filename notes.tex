@@ -224,4 +224,17 @@ $x\notin G$のとき，任意の$m\geq1$に対してある$n\geq m$が存在し�
 が成り立つ．
 \end{proof}
 
+\begin{qst}
+$X,X_1,X_2,\cdots$を2乗可積分な確率変数とする．
+$X_n$が$X$に2次平均収束するとき，$X_n^2$の期待値は$X^2$に収束することを示せ．
+すなわち
+\[ \lim_{n\to\infty}E[(X_n-X)^2]=0\Rightarrow\lim_{n\to\infty}E[X_n^2]=E[X^2] \]
+であることを示せ．
+\end{qst}
+\begin{proof}
+$E[(X_n-X)^2]\to0$より$\|X_n-X\|_2\to0$であるから
+$|\|X_n\|_2-\|X\|_2|\leq\|X_n-X\|_2\to0$
+ゆえ$\|X_n\|_2\to\|X\|_2$すなわち$E[X_n^2]\to E[X^2]$が従う．
+\end{proof}
+
 \end{document}
