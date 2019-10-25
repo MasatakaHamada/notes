@@ -237,4 +237,24 @@ $|\|X_n\|_2-\|X\|_2|\leq\|X_n-X\|_2\to0$
 ゆえ$\|X_n\|_2\to\|X\|_2$すなわち$E[X_n^2]\to E[X^2]$が従う．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+$A,B\in\mathcal{F}$に対して，$P(A)=1$ならば$P(A\cap B)=P(B)$であることを示せ．
+\end{qst}
+\begin{proof}
+$P(A)=1$より$P(A^c)=0$であるから，
+特に$P(A^c\cap B)\leq P(A^c)=0$より$P(A^c\cap B)=0$である．
+よって$P(B)=P(A\cap B)+P(A^c\cap B)=P(A\cap B)$となる．
+\end{proof}
+
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間，$X$を可積分確率変数とし，
+$A\in\mathcal{F}$は$P(A)=1$を満たすとする．
+このとき$E(X)=E(X;A)$が成り立つことを示せ．
+\end{qst}
+\begin{proof}
+$P(A)=1$より$P(A^c)=0$であり，零集合上の積分は0であるから$E(X;A^c)=0$である．
+よって$E(X)=E(X;A)+E(X;A^c)=E(X;A)$となる．
+\end{proof}
+
 \end{document}
