@@ -257,4 +257,23 @@ $P(A)=1$より$P(A^c)=0$であり，零集合上の積分は0であるから$E(X
 よって$E(X)=E(X;A)+E(X;A^c)=E(X;A)$となる．
 \end{proof}
 
+\begin{qst}
+$(X,\mathcal{M})$を可測空間とする．
+$X$の空でない部分集合$A$に対して
+\[ \mathcal{M}_A=\{A\cap M:M\in\mathcal{M}\} \]
+と定めるとき，$(A,\mathcal{M}_A)$は可測空間であることを示せ．
+\end{qst}
+\begin{proof}
+$A\cap\varnothing=\varnothing$，
+$A\cap X=A$ゆえ$\varnothing,A\in\mathcal{M}_A$である．
+また，$F=A\cap M\in\mathcal{M}_A$のとき，
+$A=(A\cap M)\cup(A\cap M^c)$であることに注意すると
+$A\setminus F=A\setminus(A\cap M)=A\cap M^c$ゆえ
+$A\setminus F\in\mathcal{M}_A$である．
+さらに，$n=1,2,\cdots$に対して$F_n=A\cap M_n\in\mathcal{M}_A$とするとき，
+$\bigcup_nF_n=\bigcup_n(A\cap M_n)=A\cap\bigcup_nM_n$ゆえ
+$\bigcup_nF_n\in\mathcal{M}_A$である．
+以上より，$(A,\mathcal{M}_A)$は可測空間である．
+\end{proof}
+
 \end{document}
