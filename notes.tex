@@ -276,4 +276,70 @@ $\bigcup_nF_n\in\mathcal{M}_A$である．
 以上より，$(A,\mathcal{M}_A)$は可測空間である．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+$p\in(0,1)$とし，$\{\xi_n\}_{n=1,2,\cdots}$を独立同分布な確率変数列で
+$P(\xi_1=1)=p=1-P(\xi_1=-1)$を満たすものとする．
+また，$\mathcal{F}_0=\{\varnothing,\Omega\}$，
+$\mathcal{F}_n=\sigma(\xi_1,\cdots,\xi_n)$とおく．
+さらに$k\in\mathbb{Z}$とし，$\{S_n\}_{n=0,1,\cdots}$を
+$S_0=k$，$S_n=k+\xi_1+\cdots+\xi_n$により定める．
+このとき，$\{S_n\}_{n=0,1,\cdots}$が
+$\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関して
+マルチンゲールであるための$p$に関する必要十分条件を求めよ．
+\end{qst}
+\begin{proof}
+$\{S_n\}_{n=0,1,\cdots}$および$\{\mathcal{F}_n\}_{n=0,1,\cdots}$の定義より，
+各$n$に対して$S_n$は$\mathcal{F}_n$-可測である．また
+\[ E(|S_n|)\leq k+\sum_{i=1}^nE(|\xi_i|)
+=k+nE(|\xi_1|)=k+n<\infty \]
+より，各$n$に対して$S_n$は可積分である．
+さらに，$S_{n+1}-S_n=\xi_{n+1}$であり，
+$\xi_{n+1}$は$\mathcal{F}_n$と独立であるから
+\[ E(S_{n+1}-S_n\mid\mathcal{F}_n)=
+E(\xi_{n+1}\mid\mathcal{F}_n)=E(\xi_{n+1})
+=1\cdot p+(-1)(1-p)=2p-1 \]
+となる．
+$\{S_n\}_{n=0,1,\cdots}$が
+$\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関してマルチンゲールならば
+$E(S_{n+1}-S_n\mid\mathcal{F}_n)=0$
+であるから，上式より$p=1/2$である．
+逆に$p=1/2$ならば上式より$E(S_{n+1}-S_n\mid\mathcal{F}_n)=0$であるから，
+$\{S_n\}_{n=0,1,\cdots}$は
+$\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関してマルチンゲールとなる．
+以上より，$\{S_n\}_{n=0,1,\cdots}$が
+$\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関して
+マルチンゲールであるための$p$に関する必要十分条件は$p=1/2$である．
+\end{proof}
+
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+$\{\xi_n\}_{n=1,2,\cdots}$を独立同分布な確率変数列で，
+$k=1,2,\cdots$に対して
+\[ P(\xi_1=k)=P(\xi_1=-k)=\frac{1}{2^{k+1}} \]
+を満たすものとする．
+また，$\mathcal{F}_0=\{\varnothing,\Omega\}$，
+$\mathcal{F}_n=\sigma(\xi_1,\cdots,\xi_n)$とおく．
+さらに，$\{S_n\}_{n=0,1,\cdots}$を$S_0=0$，$S_n=\xi_1+\cdots+\xi_n$により定める．
+このとき，$\{S_n\}_{n=0,1,\cdots}$は
+$\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関してマルチンゲールであることを示せ．
+\end{qst}
+\begin{proof}
+$\{S_n\}_{n=0,1,\cdots}$および$\{\mathcal{F}_n\}_{n=0,1,\cdots}$の定義より，
+各$n$に対して$S_n$は$\mathcal{F}_n$-可測である．また
+\[ E(|S_n|)\leq\sum_{i=1}^nE(|\xi_i|)
+=nE(|\xi_1|)=n\sum_{k=1}^\infty\frac{k}{2^k}<\infty
+（\because\text{ratio test}） \]
+より，各$n$に対して$S_n$は可積分である．
+さらに，$S_{n+1}-S_n=\xi_{n+1}$であり，
+$\xi_{n+1}$は$\mathcal{F}_n$と独立であるから
+\[ E(S_{n+1}-S_n\mid\mathcal{F}_n)=
+E(\xi_{n+1}\mid\mathcal{F}_n)=E(\xi_{n+1})
+=\sum_{k=1}^\infty\frac{k}{2^{k+1}}+\sum_{k=1}^\infty\frac{-k}{2^{k+1}}
+=0 \]
+となる．
+従って，$\{S_n\}_{n=0,1,\cdots}$は
+$\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関してマルチンゲールである．
+\end{proof}
+
 \end{document}
