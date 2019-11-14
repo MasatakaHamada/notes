@@ -342,4 +342,50 @@ E(\xi_{n+1}\mid\mathcal{F}_n)=E(\xi_{n+1})
 $\{\mathcal{F}_n\}_{n=0,1,\cdots}$に関してマルチンゲールである．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+確率変数$X$が可測となるような最小の$\sigma$-加法族を$\sigma(X)$とするとき，
+$\sigma(X)=\{X^{-1}(B):B\in\mathcal{B}\}$であることを示せ．
+\end{qst}
+\begin{proof}
+$\mathcal{G}=\{X^{-1}(B):B\in\mathcal{B}\}$は$\sigma$-加法族である．実際
+\begin{itemize}
+\item$\varnothing=X^{-1}(\varnothing)\in\mathcal{G}$，$\Omega=X^{-1}(\mathbb{R})\in\mathcal{G}$，
+\item$G=X^{-1}(B)\in\mathcal{G}$のとき$G^c=X^{-1}(B^c)\in\mathcal{G}$，
+\item$n\in\mathbb{N}$に対して$G_n=X^{-1}(B_n)\in\mathcal{G}$のとき
+$\bigcup_nG_n=X^{-1}(\bigcup_nB_n)\in\mathcal{G}$
+\end{itemize}
+である．$\mathcal{G}$の定義より，任意の$B\in\mathcal{B}$に対して
+$X^{-1}(B)\in\mathcal{G}$，すなわち$X$は$\mathcal{G}$-可測であるから
+$\sigma(X)\subset\mathcal{G}$が成り立つ．
+また，$X$は$\sigma(X)$-可測であるから，任意の$B\in\mathcal{B}$に対して
+$X^{-1}(B)\in\sigma(X)$であり，ゆえに$\mathcal{G}\subset\sigma(X)$である．
+従って$\sigma(X)=\mathcal{G}$である．
+\end{proof}
+
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+確率変数$X_1,\cdots,X_n$が可測となるような
+最小の$\sigma$-加法族を$\sigma(X_1,\cdots,X_n)$とするとき，
+次が成り立つことを示せ．
+\[ \sigma(X_1,\cdots,X_n)=\sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right) \]
+\end{qst}
+\begin{proof}
+定義より，任意の$k=1,\cdots,n$に対して
+$\sigma(X_k)\subset\sigma(X_1,\cdots,X_n)$が成り立つから
+\[ \bigcup_{k=1}^n\sigma(X_k)\subset\sigma(X_1,\cdots,X_n) \]
+である．これより
+\[ \sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right)\subset\sigma(X_1,\cdots,X_n) \]
+を得る．また，任意の$B_k\in\mathcal{B}$（$k=1,\cdots,n$）に対して
+\[ X_k^{-1}(B_k)\in\sigma(X_k)\subset\bigcup_{k=1}^n\sigma(X_k)
+\subset\sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right) \]
+が成り立つから，$X_1,\cdots,X_n$は
+$\displaystyle\sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right)$-可測である．
+これより
+\[ \sigma(X_1,\cdots,X_n)\subset\sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right) \]
+を得る．以上より
+\[ \sigma(X_1,\cdots,X_n)=\sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right) \]
+が成り立つ．
+\end{proof}
+
 \end{document}
