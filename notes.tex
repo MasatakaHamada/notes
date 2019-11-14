@@ -388,4 +388,20 @@ $\displaystyle\sigma\left(\bigcup_{k=1}^n\sigma(X_k)\right)$-可測である．
 が成り立つ．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+独立な確率変数列$\{X_n\}_{n=1}^\infty$に対して
+$\mathcal{F}_n=\sigma(X_1,\cdots,X_n)$（$n=1,2,\cdots$）とおくとき，
+$X_{n+1}$は$\mathcal{F}_n$と独立であることを示せ．
+\end{qst}
+\begin{proof}
+$\mathcal{F}_n$は$\pi$-系$\bigcup_{k=1}^n\sigma(X_k)$が生成する$\sigma$-加法族である．
+また，$\sigma(X_{n+1})$は$\sigma$-加法族であるから特に$\pi$-系である．
+よって，$\pi$-$\lambda$定理より，
+$F\in\sigma(X_{n+1})$および$G\in\bigcup_{k=1}^n\sigma(X_k)$に対して
+$P(F\cap G)=P(F)P(G)$であることを示せばよい．
+ところが，$\{X_n\}_{n=1}^\infty$は独立であるから，$P(F\cap G)=P(F)P(G)$は直ちに従う．
+ゆえに，$X_{n+1}$は$\mathcal{F}_n$と独立である．
+\end{proof}
+
 \end{document}
