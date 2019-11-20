@@ -404,4 +404,30 @@ $P(F\cap G)=P(F)P(G)$であることを示せばよい．
 ゆえに，$X_{n+1}$は$\mathcal{F}_n$と独立である．
 \end{proof}
 
+\begin{qst}
+確率変数列$\{X_n\}_{n=1}^\infty$に対して次が成り立つことを示せ．
+\[ \sup_n\|X_n\|_2<\infty\Leftrightarrow\sup_nE(X_n^2)<\infty \]
+\end{qst}
+\begin{proof}
+($\Rightarrow$)
+$x^2$は$x\geq0$において単調非減少であるから
+$E(X_n^2)=\|X_n\|_2^2\leq(\sup\|X_n\|_2)^2$が成り立つ．
+従って$\sup E(X_n^2)\leq(\sup\|X_n\|_2)^2<\infty$である．
+
+($\Leftarrow$)
+$\sqrt{x}$は$x\geq0$において単調非減少であるから
+$\|X_n\|_2=\sqrt{E(X_n^2)}\leq\sqrt{\sup E(X_n)^2}$が成り立つ．
+従って$\sup\|X_n\|_2\leq\sqrt{\sup E(X_n)^2}<\infty$である．
+\end{proof}
+
+\begin{qst}
+$0\leq x\leq y$に対して$\sqrt{x}\leq\sqrt{y}$であることを示せ．
+\end{qst}
+\begin{proof}
+$x=y=0$のときは明らかに成り立つ．
+$x,y$の少なくとも一方が0でないとき，
+$0\leq y-x=(\sqrt{y}+\sqrt{x})(\sqrt{y}-\sqrt{x})$の両辺を
+$\sqrt{y}+\sqrt{x}>0$で割れば$0\leq\sqrt{y}-\sqrt{x}$となり，結論を得る．
+\end{proof}
+
 \end{document}
