@@ -430,4 +430,35 @@ $0\leq y-x=(\sqrt{y}+\sqrt{x})(\sqrt{y}-\sqrt{x})$の両辺を
 $\sqrt{y}+\sqrt{x}>0$で割れば$0\leq\sqrt{y}-\sqrt{x}$となり，結論を得る．
 \end{proof}
 
+\begin{qst}
+実数列$\{a_n\}_{n=1}^\infty,\{b_n\}_{n=1}^\infty$がそれぞれ
+実数$a,b$に収束するとき，以下の問いに答えよ．
+\begin{itemize}
+\item[(1)]任意の$n=1,2,\cdots$に対し$a_n<b_n$が成り立つならば$a\leq b$であることを示せ．
+\item[(2)](1)において$a<b$は成り立つか．成り立つ場合は証明し，成り立たない場合は反例を挙げよ．
+\end{itemize}
+\end{qst}
+\begin{proof}
+\begin{itemize}
+\item[(1)]
+実数列$\{a_n\}_{n=1}^\infty,\{b_n\}_{n=1}^\infty$がそれぞれ
+実数$a,b$に収束するから，
+任意の$\varepsilon>0$について適当な$N\in\mathbb{N}$をとれば，
+$n\geq N$に対して
+$|a_n-a|<\frac{\varepsilon}{2}$，$|b_n-b|<\frac{\varepsilon}{2}$
+が成り立つ．よって
+\[
+a-b=a-a_N-b+a_N<a-a_N-b+b_N\leq|a_N-a|+|b_N-b|<
+\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+となり，任意の$\varepsilon>0$に対し$a-b<\varepsilon$である．
+従って$a\leq b$が成り立つ．
+\item[(2)]
+成り立たない．実際，
+$a_n=-\frac{1}{n}$，$b_n=\frac{1}{n}$
+とすると，任意の$n=1,2,\cdots$に対し$a_n<b_n$が成り立つが，
+$\{a_n\}_{n=1}^\infty,\{b_n\}_{n=1}^\infty$はともに0に収束する．
+\end{itemize}
+\end{proof}
+
 \end{document}
