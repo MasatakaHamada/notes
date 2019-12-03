@@ -99,11 +99,23 @@ $B_1,B_2,\cdots\in\mathcal{B}(\mathbb{R})$を$i\neq j$に対して$B_i\cap B_j=\
 である．
 \end{proof}
 
-\begin{qst}[未解決]
+\begin{qst}
 $f\colon[0,\infty)\to\mathbb{R}$を$(0,\infty)$上連続な関数とする．このとき
 \[ \lim_{r\to+0, r\in\mathbb{Q}}f(r)=f(0) \Rightarrow \lim_{x\to+0}f(x)=f(0) \]
 が成り立つことを証明せよ（従って，$f$は$[0,\infty)$上連続となる）．
 \end{qst}
+\begin{proof}
+$\varepsilon>0$とする．
+仮定より，ある$\delta>0$が存在して，任意の$r\in(0,\delta)\cap\mathbb{Q}$に対して
+$|f(r)-f(0)|<\varepsilon/2$が成り立つ．
+また，任意の$x\in(0,\delta)$に対して，$f$の連続性より，
+ある$\delta'>0$が存在して，$|y-x|<\delta'$を満たす$y\in(0,\delta)$に対し
+$|f(y)-f(x)|<\varepsilon/2$が成り立つ．
+一方，$|r-x|<\delta'$を満たす$r\in(0,\delta)\cap\mathbb{Q}$が存在する．
+よって
+$|f(x)-f(0)|\leq|f(x)-f(r)|+|f(r)-f(0)|<\varepsilon/2+\varepsilon/2=\varepsilon$
+となるから，結論が従う．
+\end{proof}
 \begin{proof}[\textbf{誤答例}]
 0に収束する任意の非負実数列$\{x_n\}_{n=1}^\infty$に対して，
 $\{f(x_n)\}_{n=1}^\infty$が$f(0)$に収束することを示す．
