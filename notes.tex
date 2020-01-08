@@ -513,4 +513,54 @@ X=\{1,2,3\}，
 \end{itemize}
 \end{proof}
 
+\begin{qst}
+空でない集合$X$に対し，離散位相空間$(X,2^X)$を考える．
+このとき，$X$の部分集合$A$が有限集合であることは，
+$A$がコンパクトであるための必要十分条件であることを示せ．
+\end{qst}
+\begin{proof}
+以下，$\{O_\lambda\}_{\lambda\in\Lambda}$を$A$の任意の開被覆とする．
+$A$が$n$個の元$a_1,\cdots,a_n$からなる有限集合であると仮定すると，
+各$i=1,\cdots,n$に対して$a_i\in O_{\lambda_i}$を満たす$\lambda_i\in\Lambda$を取れば
+$\{O_{\lambda_i}\}_{i=1}^n$は$\{O_\lambda\}_{\lambda\in\Lambda}$の有限部分被覆となる．
+よって$A$はコンパクトである．
+逆に$A$がコンパクトであると仮定すると，
+$A$の開被覆$\{\{a\}:a\in A\}$は有限部分被覆
+$\{\{a_1\},\cdots,\{a_n\}:a_1,\cdots,a_n\in A\}$を持つ．
+よって$A\subset\{a_1,\cdots,a_n\}$より$A$は有限集合である．
+以上より，$X$の部分集合$A$が有限集合であることは，
+$A$がコンパクトであるための必要十分条件である．
+\end{proof}
+
+\begin{qst}
+$\{\lambda_n\}_{n=1}^\infty$を正の実数列で$\lambda>0$に収束するものとする．
+各$i=1,2,\cdots$に対して，パラメータ$\lambda_i$を持つ指数分布を$\mu_i$とおく．
+すなわち，$B\in\mathcal{B}(\mathbb{R})$に対して
+\[ \mu_i(B)=\int_B\lambda_i\exp(-\lambda_ix)1_{[0,\infty)}(x)\,dx \]
+であるとする．同様に，パラメータ$\lambda$を持つ指数分布を$\mu$とおく．
+このとき，確率分布$\mu_n$は$\mu$に弱収束することを示せ．
+\end{qst}
+\begin{proof}
+$f$を$\mathbb{R}$上の任意の有界連続関数とする．このとき
+\[
+\int_\mathbb{R}f(x)\,d\mu_n(x)
+=\int_0^\infty f(x)\lambda_n\exp(-\lambda_nx)\,dx
+=\int_0^\infty f\left(\frac{y}{\lambda_n}\right)\exp(-y)\,dy
+\]
+である．ここで，各$y\in[0,\infty)$および$n=1,2,\cdots$に対して
+\[
+\left|f\left(\frac{y}{\lambda_n}\right)\exp(-y)\right|\leq\exp(-y)\sup_{y\in[0,\infty)}|f(y)|，
+\lim_{n\to\infty}f\left(\frac{y}{\lambda_n}\right)\exp(-y)
+=f\left(\frac{y}{\lambda}\right)\exp(-y)
+\]
+であり，優収束定理の仮定を満たすから
+\[
+\lim_{n\to\infty}\int_\mathbb{R}f(x)\,d\mu_n(x)
+=\lim_{n\to\infty}\int_0^\infty f\left(\frac{y}{\lambda_n}\right)\exp(-y)\,dy
+=\int_0^\infty f\left(\frac{y}{\lambda}\right)\exp(-y)\,dy
+=\int_\mathbb{R}f(x)\,d\mu(x)
+\]
+となる．よって，$\mu_n$は$\mu$に弱収束する．
+\end{proof}
+
 \end{document}
