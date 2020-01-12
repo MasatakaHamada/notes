@@ -563,4 +563,33 @@ $f$を$\mathbb{R}$上の任意の有界連続関数とする．このとき
 となる．よって，$\mu_n$は$\mu$に弱収束する．
 \end{proof}
 
+\begin{qst}
+$X$を位相空間，$A$を$X$の部分集合とする．このとき，
+任意の$x\in A$に対して$x\in O\subset A$を満たす$X$の開集合$O$が存在するならば，
+$A$は$X$の開集合であることを示せ．
+\end{qst}
+\begin{proof}
+仮定より，任意の$x\in A$に対して$x\in O_x\subset A$を満たす$X$の開集合$O_x$が存在する．
+このとき，$\bigcup_{x\in A}O_x\subset A$である．
+一方，$x\in A$に対して$x\in O_x\subset\bigcup_{x\in A}O_x$であるから
+$A\subset\bigcup_{x\in A}O_x$である．
+よって$A=\bigcup_{x\in A}O_x$である．
+ここで，各$O_x$は開集合であるから，和集合$\bigcup_{x\in A}O_x$は開集合である．
+従って，$A$は開集合である．
+\end{proof}
+
+\begin{qst}
+ハウスドルフ空間$X$に対し，直積空間$X\times X$の部分集合
+$\Delta=\{(x,x):x\in X\}$は$X\times X$の閉集合であることを示せ．
+\end{qst}
+\begin{proof}
+$(X\times X)\setminus\Delta$が開集合であることを示す．
+任意の$(x,y)\in(X\times X)\setminus\Delta$に対して$x\neq y$である．
+$X$はハウスドルフ空間であるから，
+$U\cap V=\varnothing$，$x\in U$，$y\in V$を満たす$X$の開集合$U,V$が存在する．
+このとき，$U\times V$は$X\times X$の開集合であり，
+$(x,y)\in U\times V\subset(X\times X)\setminus\Delta$を満たす．
+よって，$(X\times X)\setminus\Delta$は開集合であるから，$\Delta$は閉集合である．
+\end{proof}
+
 \end{document}
