@@ -592,4 +592,35 @@ $(x,y)\in U\times V\subset(X\times X)\setminus\Delta$を満たす．
 よって，$(X\times X)\setminus\Delta$は開集合であるから，$\Delta$は閉集合である．
 \end{proof}
 
+\begin{qst}
+$(X,d)$を距離空間とし，$\{x_n\}_{n=1}^\infty,\{y_n\}_{n=1}^\infty$を
+それぞれ$x,y\in X$に収束する$X$の点列とするとき
+\[ d(x,y)=\lim_{n\to\infty}d(x_n,y_n) \]
+であることを示せ．
+\end{qst}
+\begin{proof}
+点列$\{x_n\}_{n=1}^\infty,\{y_n\}_{n=1}^\infty$はそれぞれ$x,y$に収束するから，
+任意の$\varepsilon>0$に対して適当な$N\in\mathbb{N}$をとれば，
+$n\geq N$に対して$d(x_n,x)<\frac{\varepsilon}{2}$，$d(y_n,y)<\frac{\varepsilon}{2}$
+が成り立つ．よって，三角不等式より
+\[
+d(x_n,y_n)-d(x,y)
+=\{d(x_n,y_n)-d(x,y_n)\}+\{d(x,y_n)-d(x,y)\}
+\leq d(x_n,x)+d(y_n,y)
+<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}
+=\varepsilon
+\]
+となる．同様に
+\[
+d(x,y)-d(x_n,y_n)
+=\{d(x,y)-d(x_n,y)\}+\{d(x_n,y)-d(x_n,y_n)\}
+\leq d(x_n,x)+d(y_n,y)
+<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}
+=\varepsilon
+\]
+である．従って，$n\geq N$に対して$|d(x_n,y_n)-d(x,y)|<\varepsilon$が成り立つから
+\[ d(x,y)=\lim_{n\to\infty}d(x_n,y_n) \]
+である．
+\end{proof}
+
 \end{document}
