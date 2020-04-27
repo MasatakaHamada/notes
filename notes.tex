@@ -623,4 +623,106 @@ d(x,y)-d(x_n,y_n)
 である．
 \end{proof}
 
+\begin{qst}
+有界な単調数列は収束することを示せ．すなわち，次の2つの命題が成り立つことを証明せよ．
+\begin{enumerate}
+\item 上に有界な単調増加列$\{a_n\}_{n=1}^\infty$は$\sup\{a_n:n\in\mathbb{N}\}$に収束する．
+\item 下に有界な単調減少列$\{b_n\}_{n=1}^\infty$は$\inf\{b_n:n\in\mathbb{N}\}$に収束する．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+\begin{enumerate}
+\item$a=\sup\{a_n:n\in\mathbb{N}\}$とする．
+$\{a_n\}_{n=1}^\infty$は単調増加列であるから
+\[ a_1\leq a_2\leq\cdots\leq a_n\leq\cdots\leq a \]
+である．また，上限の定義より，任意の$\varepsilon>0$に対して
+ある$N\in\mathbb{N}$が存在して$a-\varepsilon<a_N$が成り立つ．従って
+\[ n\geq N\Rightarrow 0\leq a-a_n<\varepsilon \]
+であるから，$\{a_n\}_{n=1}^\infty$は$a$に収束する．
+\item$b=\inf\{b_n:n\in\mathbb{N}\}$とする．
+$\{b_n\}_{n=1}^\infty$は単調減少列であるから
+\[ b_1\geq b_2\geq\cdots\geq b_n\geq\cdots\geq b \]
+である．また，下限の定義より，任意の$\varepsilon>0$に対して
+ある$N\in\mathbb{N}$が存在して$b_N<b+\varepsilon$が成り立つ．従って
+\[ n\geq N\Rightarrow 0\leq b_n-b<\varepsilon \]
+であるから，$\{b_n\}_{n=1}^\infty$は$b$に収束する．
+\end{enumerate}
+\end{proof}
+
+\begin{qst}
+確率変数列$\{X_n\}_{n=1}^\infty$が$X$に概収束するならば，
+$\{X_n\}_{n=1}^\infty$は$X$に確率収束することを示せ．
+\end{qst}
+\begin{proof}
+$m,j\in\mathbb{N}$に対して
+\[ A_{m,j}=\left\{|X_m-X|\leq\frac{1}{j}\right\} \]
+と定める．このとき
+\[
+\left\{\lim_{n\to\infty}X_n=X\right\}
+=\bigcap_{j=1}^\infty\bigcup_{n=1}^\infty\bigcap_{m=n}^\infty A_{m,j}
+\]
+である．いま，$\{X_n\}_{n=1}^\infty$は$X$に概収束するから
+\[
+1=P\left(\lim_{n\to\infty}X_n=X\right)
+=P\left(\bigcap_{j=1}^\infty\bigcup_{n=1}^\infty\bigcap_{m=n}^\infty A_{m,j}\right)
+\leq P\left(\bigcup_{n=1}^\infty\bigcap_{m=n}^\infty A_{m,j}\right)
+\]
+が成り立つ．すなわち，各$j\in\mathbb{N}$に対して
+\[ P\left(\bigcup_{n=1}^\infty\bigcap_{m=n}^\infty A_{m,j}\right)=1 \]
+である．ところが，$B_{n,j}=\bigcap_{m=n}^\infty A_{m,j}$は単調増加列であるから
+\[
+\lim_{n\to\infty}P(B_{n,j})
+=P\left(\bigcup_{n=1}^\infty\bigcap_{m=n}^\infty A_{m,j}\right)=1
+\]
+である．さらに，$B_{n,j}\subset A_{n,j}$であるから
+\[ \lim_{n\to\infty}P\left(|X_n-X|\leq\frac{1}{j}\right)=\lim_{n\to\infty}P(A_{n,j})=1 \]
+が得られる．ここで，任意の$\varepsilon>0$に対して
+$1/j\leq\varepsilon$を満たす$j\in\mathbb{N}$が存在するから
+\[ \left\{|X_n-X|\leq\frac{1}{j}\right\}\subset\{|X_n-X|\leq\varepsilon\} \]
+となる．よって
+\[
+\lim_{n\to\infty}P(|X_n-X|\leq\varepsilon)
+=\lim_{n\to\infty}P\left(|X_n-X|\leq\frac{1}{j}\right)=1
+\]
+であり，従って
+\[
+\lim_{n\to\infty}P(|X_n-X|>\varepsilon)
+=\lim_{n\to\infty}\{1-P(|X_n-X|\leq\varepsilon)\}
+=1-\lim_{n\to\infty}P(|X_n-X|\leq\varepsilon)
+=0
+\]
+が成り立つ．すなわち，$\{X_n\}_{n=1}^\infty$は$X$に確率収束する．
+\end{proof}
+
+\begin{qst}
+確率変数列$\{X_n\}_{n=1}^\infty$が$X$に$p$次平均収束するならば，
+$\{X_n\}_{n=1}^\infty$は$X$に確率収束することを示せ．
+\end{qst}
+\begin{proof}
+任意の$\varepsilon>0$に対して，チェビシェフの不等式より
+\[ P(|X_n-X|>\varepsilon)\leq\varepsilon^{-p}E[|X_n-X|^p] \]
+が成り立つから，$\{X_n\}_{n=1}^\infty$が$X$に$p$次平均収束するならば，
+$\{X_n\}_{n=1}^\infty$は$X$に確率収束する．
+\end{proof}
+
+\begin{qst}
+確率変数列$\{X_n\}_{n=1}^\infty$が$X$に確率収束するならば，
+$X$に概収束する$\{X_n\}_{n=1}^\infty$の部分列が存在することを示せ．
+\end{qst}
+\begin{proof}
+$\{X_n\}_{n=1}^\infty$は$X$に確率収束するから，
+任意の$k\in\mathbb{N}$に対して$P(|X_{n_k}-X|\geq2^{-k})\leq2^{-k}$を満たす
+$n_k\in\mathbb{N}$が存在する．このとき
+\[ \sum_{k=1}^\infty P(|X_{n_k}-X|\geq2^{-k})\leq\sum_{k=1}^\infty2^{-k}=1<\infty \]
+であるから，ボレル・カンテリの補題より
+\[
+P\left(\limsup_{k\to\infty}\{|X_{n_k}-X|\geq2^{-k}\}\right)=0
+\text{すなわち}
+P\left(\liminf_{k\to\infty}\{|X_{n_k}-X|<2^{-k}\}\right)=1
+\]
+が成り立つ．よって，ほとんど確実に，ある$K\in\mathbb{N}$が存在して，
+任意の$k\geq K$に対して$|X_{n_k}-X|<2^{-k}$である．
+従って，$\{X_{n_k}\}_{k=1}^\infty$は$X$に概収束する．
+\end{proof}
+
 \end{document}
