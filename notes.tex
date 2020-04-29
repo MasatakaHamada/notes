@@ -725,4 +725,55 @@ P\left(\liminf_{k\to\infty}\{|X_{n_k}-X|<2^{-k}\}\right)=1
 従って，$\{X_{n_k}\}_{k=1}^\infty$は$X$に概収束する．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+$P(A)>0$を満たす事象$A\in\mathcal{F}$に対して
+\[ P(\cdot\mid A)=\frac{P(A\cap\cdot)}{P(A)} \]
+と定めると，$P(\cdot\mid A)$は$(\Omega,\mathcal{F})$上の確率測度であることを示せ．
+さらに，確率変数$X\colon\Omega\to\mathbb{R}$に対して
+\[ \int_\Omega X\,dP(\cdot\mid A)=\frac{E(X;A)}{P(A)} \]
+であることを示せ．
+\end{qst}
+\begin{proof}
+定義より$P(\Omega\mid A)=1$である．
+また，互いに素な事象$A_0,A_1,\cdots\in\mathcal{F}$に対して
+\[
+P\left(\bigcup_{n=0}^\infty A_n\mid A\right)
+=\frac{P(A\cap\bigcup_{n=0}^\infty A_n)}{P(A)}
+=\frac{P(\bigcup_{n=0}^\infty(A\cap A_n))}{P(A)}
+=\sum_{n=0}^\infty\frac{P(A\cap A_n)}{P(A)}
+=\sum_{n=0}^\infty P(A_n\mid A)
+\]
+となる．従って，$P(\cdot\mid A)$は$(\Omega,\mathcal{F})$上の確率測度である．
+さて，$B\in\mathcal{F}$に対して$X=1_B$とすると
+\[
+\int_\Omega X\,dP(\cdot\mid A)
+=P(B\mid A)=\frac{P(A\cap B)}{P(A)}=\frac{E(1_{A\cap B})}{P(A)}
+=\frac{E(X;A)}{P(A)}
+\]
+である．また，$X$が非負単関数であるとき，$a_0,\cdots,a_n\geq0$と
+$A_0,\cdots,A_n\in\mathcal{F}$を用いて$X=\sum_{i=0}^na_i1_{A_i}$と表せるので
+\[
+\int_\Omega X\,dP(\cdot\mid A)
+=\sum_{i=0}^na_iP(A_i\mid A)=\sum_{i=0}^na_i\frac{E(1_{A_i};A)}{P(A)}
+=\frac{E(X;A)}{P(A)}
+\]
+である．$X$が非負確率変数であるとき，$X$に各点収束する
+非負単関数列$\{X_n\}_{n=0}^\infty$をとることで，単調収束定理より
+\[
+\int_\Omega X\,dP(\cdot\mid A)
+=\lim_{n\to\infty}\int_\Omega X_n\,dP(\cdot\mid A)=\lim_{n\to\infty}\frac{E(X_n;A)}{P(A)}
+=\frac{E(X;A)}{P(A)}
+\]
+である．$X$が一般の確率変数であるときは，$X=X^+-X^-$として
+\[
+\int_\Omega X\,dP(\cdot\mid A)
+=\int_\Omega X^+\,dP(\cdot\mid A)-\int_\Omega X^-\,dP(\cdot\mid A)
+=\frac{E(X^+;A)}{P(A)}-\frac{E(X^-;A)}{P(A)}=\frac{E(X;A)}{P(A)}
+\]
+となる．以上より，確率変数$X\colon\Omega\to\mathbb{R}$に対して
+\[ \int_\Omega X\,dP(\cdot\mid A)=\frac{E(X;A)}{P(A)} \]
+である．
+\end{proof}
+
 \end{document}
