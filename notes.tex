@@ -776,4 +776,25 @@ $A_0,\cdots,A_n\in\mathcal{F}$を用いて$X=\sum_{i=0}^na_i1_{A_i}$と表せる
 である．
 \end{proof}
 
+\begin{qst}
+次の問いに答えよ．
+\begin{enumerate}
+\item 正の整数$n$が$\sqrt{n}$以下の1でない正の約数を持たなければ，$n$は素数であることを示せ．
+\item 正の整数$n$が$\sqrt{n}$未満の1でない正の約数を持たないとき，$n$は素数であると言えるか．
+言える場合は証明し，言えない場合は反例を挙げよ．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+\begin{enumerate}
+\item $m$を$n$の1でない正の約数とする．このとき，仮定より$m>\sqrt{n}$である．
+また，ある正の整数$k$が存在して$n=mk$である．ここで
+\[ k=\frac{n}{m}<\frac{n}{\sqrt{n}}=\sqrt{n} \]
+であるが，$n$は$\sqrt{n}$以下の1でない正の約数を持たないから$k=1$である．
+従って$m=n$であるから，$n$の1でない正の約数は$n$自身のみである．
+すなわち，$n$は素数である．
+\item 言えない．実際，素数$p$に対して，
+$p^2$は$\sqrt{p^2}=p$未満の1でない正の約数を持たないが合成数である．
+\end{enumerate}
+\end{proof}
+
 \end{document}
