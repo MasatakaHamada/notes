@@ -797,4 +797,24 @@ $p^2$は$\sqrt{p^2}=p$未満の1でない正の約数を持たないが合成数
 \end{enumerate}
 \end{proof}
 
+\begin{qst}
+実数列$\{a_n\}_{n=1}^\infty,\{b_n\}_{n=1}^\infty$が
+任意の$n\in\mathbb{N}$に対して$a_n\leq b_n$を満たすならば
+\[
+\sup\{a_n:n\in\mathbb{N}\}\leq\sup\{b_n:n\in\mathbb{N}\}，
+\inf\{a_n:n\in\mathbb{N}\}\leq\inf\{b_n:n\in\mathbb{N}\}
+\]
+が成り立つことを示せ．
+\end{qst}
+\begin{proof}
+仮定より，任意の$n\in\mathbb{N}$に対して
+$a_n\leq b_n\leq\sup\{b_n:n\in\mathbb{N}\}$であるから，
+$\sup\{b_n:n\in\mathbb{N}\}$は$\{a_n:n\in\mathbb{N}\}$の上界である．
+よって$\sup\{a_n:n\in\mathbb{N}\}\leq\sup\{b_n:n\in\mathbb{N}\}$が成り立つ．
+また，任意の$n\in\mathbb{N}$に対して
+$\inf\{a_n:n\in\mathbb{N}\}\leq a_n\leq b_n$であるから，
+$\inf\{a_n:n\in\mathbb{N}\}$は$\{b_n:n\in\mathbb{N}\}$の下界である．
+よって$\inf\{a_n:n\in\mathbb{N}\}\leq\inf\{b_n:n\in\mathbb{N}\}$が成り立つ．
+\end{proof}
+
 \end{document}
