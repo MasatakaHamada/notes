@@ -831,4 +831,16 @@ $\Sigma'_1\times\Sigma'_2
 である．
 \end{proof}
 
+\begin{qst}
+$(S_1,\Sigma_1),(S_2,\Sigma_2),(S_3,\Sigma_3)$を可測空間，
+$f\colon(S_1,\Sigma_1)\to(S_2,\Sigma_2),g\colon(S_2,\Sigma_2)\to(S_3,\Sigma_3)$
+を可測関数とする．このとき，合成関数$g\circ f\colon(S_1,\Sigma_1)\to(S_3,\Sigma_3)$も
+可測であることを示せ．
+\end{qst}
+\begin{proof}
+任意の$F\in\Sigma_3$に対して$g^{-1}(F)\in\Sigma_2$であるから
+\[ (g\circ f)^{-1}(F)=f^{-1}(g^{-1}(F))\in\Sigma_1 \]
+となる．従って$g\circ f$も可測である．
+\end{proof}
+
 \end{document}
