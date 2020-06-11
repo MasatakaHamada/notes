@@ -856,4 +856,35 @@ $f\colon(S_1,\Sigma_1)\to(S_2,\Sigma_2),g\colon(S_2,\Sigma_2)\to(S_3,\Sigma_3)$
 実際，数列$\{\sqrt{n}\}_{n=1}^\infty$が反例である．
 \end{proof}
 
+\begin{qst}
+$\mathbb{R}$上の実数値連続関数$f$および$a<b$を満たす$a,b\in\mathbb{R}$に対し，次の問いに答えよ．
+\begin{enumerate}
+\item 次の不等式が成り立つことを示せ．
+\[ \sup_{x\in[a,b]}\{f(x)\}^2\leq\left(\sup_{x\in[a,b]}|f(x)|\right)^2 \]
+\item 次の等式は成り立つか．成り立つ場合は証明し，成り立たない場合は反例を挙げよ．
+\[ \sup_{x\in[a,b]}\{f(x)\}^2=\left(\sup_{x\in[a,b]}|f(x)|\right)^2 \]
+\end{enumerate}
+\end{qst}
+\begin{proof}
+\begin{enumerate}
+\item
+任意の$x\in[a,b]$に対して
+\[
+\{f(x)\}^2=|f(x)|\cdot|f(x)|\leq\sup_{x\in[a,b]}|f(x)|\cdot\sup_{x\in[a,b]}|f(x)|
+=\left(\sup_{x\in[a,b]}|f(x)|\right)^2
+\]
+となる．従って
+\[ \sup_{x\in[a,b]}\{f(x)\}^2\leq\left(\sup_{x\in[a,b]}|f(x)|\right)^2 \]
+は成り立つ．
+\item
+$f$は連続であるから
+\[ |f(c)|=\sup_{x\in[a,b]}|f(x)| \]
+を満たす$c\in[a,b]$が存在する．このとき
+\[ \left(\sup_{x\in[a,b]}|f(x)|\right)^2=|f(c)|^2\leq\sup_{x\in[a,b]}|f(x)|^2 \]
+となる．この結果と1で示した不等式から
+\[ \sup_{x\in[a,b]}\{f(x)\}^2=\left(\sup_{x\in[a,b]}|f(x)|\right)^2 \]
+が得られる．
+\end{enumerate}
+\end{proof}
+
 \end{document}
