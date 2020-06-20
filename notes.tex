@@ -887,4 +887,76 @@ $f$は連続であるから
 \end{enumerate}
 \end{proof}
 
+\begin{qst}
+関数$f\colon\mathbb{R}\to\mathbb{R}$および$a\in\mathbb{R}$に対する以下の条件を考える．
+\begin{itemize}
+\item[(a1)]$\displaystyle\lim_{x\to a}f(x)=f(a)$
+\item[(a2)]$\displaystyle\lim_{n\to\infty}a_n=a$を満たす任意の実数列$\{a_n\}_{n=1}^\infty$に対して
+$\displaystyle\lim_{n\to\infty}f(a_n)=f(a)$
+\item[(b1)]$\displaystyle\lim_{x\to\infty}f(x)=\infty$
+\item[(b2)]$\displaystyle\lim_{n\to\infty}a_n=\infty$を満たす任意の実数列$\{a_n\}_{n=1}^\infty$に対して
+$\displaystyle\lim_{n\to\infty}f(a_n)=\infty$
+\item[(b2')]$\displaystyle\lim_{n\to\infty}a_n=\infty$を満たすある実数列$\{a_n\}_{n=1}^\infty$に対して
+$\displaystyle\lim_{n\to\infty}f(a_n)=\infty$
+\end{itemize}
+\begin{enumerate}
+\item (a1)$\Leftrightarrow$(a2)を示せ．
+\item (b1)$\Leftrightarrow$(b2)を示せ．
+\item (b2')$\Rightarrow$(b1)は成り立つか．成り立つ場合は証明し，成り立たない場合は反例を挙げよ．
+\item $f$が$\mathbb{R}$上連続であるとき，(b2')$\Rightarrow$(b1)は成り立つか．
+成り立つ場合は証明し，成り立たない場合は反例を挙げよ．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+\begin{enumerate}
+\item
+(a1)$\Rightarrow$(a2):
+任意の$\varepsilon>0$に対しある$\delta>0$が存在して，
+$|x-a|<\delta$ならば$|f(x)-f(a)|<\varepsilon$が成り立つ．
+また，$\delta$に対しある$N\in\mathbb{N}$が存在して，$n\geq N$ならば$|a_n-a|<\delta$が成り立つ．
+よって，$n\geq N$のとき$|a_n-a|<\delta$ゆえ$|f(a_n)-f(a)|<\varepsilon$である．
+従って(a2)が成り立つ．
+
+(a2)$\Rightarrow$(a1):
+対偶を証明する．(a1)の否定を仮定すると，ある$\varepsilon>0$が存在して，
+任意の$\delta>0$に対し$|x-a|<\delta$かつ$|f(x)-f(a)|\geq\varepsilon$を満たす$x\in\mathbb{R}$が存在する．
+そこで，各$n\in\mathbb{N}$に対し$|x_n-a|<\frac{1}{n}$かつ$|f(x_n)-f(a)|\geq\varepsilon$を満たす
+$x_n\in\mathbb{R}$をひとつずつ取る．このとき，実数列$\{x_n\}_{n=1}^\infty$は$a$に収束するが
+$\{f(x_n)\}_{n=1}^\infty$は$f(a)$に収束しない．すなわち，(a2)は成り立たない．
+以上より，対偶が証明されたから，(a2)$\Rightarrow$(a1)も示された．
+
+\item
+(b1)$\Rightarrow$(b2):
+任意の$M>0$に対しある$K>0$が存在して，$x>K$ならば$f(x)>M$が成り立つ．
+また，$K$に対しある$N\in\mathbb{N}$が存在して，$n\geq N$ならば$a_n>K$が成り立つ．
+よって，$n\geq N$のとき$a_n>K$ゆえ$f(a_n)>M$である．従って(b2)が成り立つ．
+
+(b2)$\Rightarrow$(b1):
+対偶を証明する．(b1)の否定を仮定すると，ある$M>0$が存在して，
+任意の$K>0$に対し$x>K$かつ$f(x)\leq M$を満たす$x\in\mathbb{R}$が存在する．
+そこで，各$n\in\mathbb{N}$に対し$x_n>n$かつ$f(x_n)\leq M$を満たす$x_n\in\mathbb{R}$を
+ひとつずつ取る．このとき，実数列$\{x_n\}_{n=1}^\infty$は正の無限大に発散するが
+$\{f(x_n)\}_{n=1}^\infty$は正の無限大に発散しない．すなわち，(b2)は成り立たない．
+以上より，対偶が証明されたから，(b2)$\Rightarrow$(b1)も示された．
+\item
+成り立たない．実際，$f(x)=1+x1_\mathbb{N}(x)$とすると
+$\lim_{n\to\infty}f(n)=\lim_{n\to\infty}(1+n)=\infty$であるが，
+任意の$K>0$に対し$x>K$を満たす$x\in\mathbb{R}\setminus\mathbb{N}$をとると$f(x)=1$となる．
+\item
+成り立たない．実際，$k\geq2$に対して
+\[
+f(x)=
+\begin{cases}
+1 & (x\leq1) \\
+x & (1<x\leq2) \\
+2k^2-k-2(k-1)x & (k<x\leq\frac{2k+1}{2}) \\
+2kx-2k^2-k+1 & (\frac{2k+1}{2}<x\leq k+1)
+\end{cases}
+\]
+とすると$\lim_{n\to\infty}f(n)=\lim_{n\to\infty}n=\infty$であるが，
+任意の$K>0$に対し$\frac{2k+1}{2}>K$を満たす$k\geq2$をとると
+$f(\frac{2k+1}{2})=1$となる．
+\end{enumerate}
+\end{proof}
+
 \end{document}
