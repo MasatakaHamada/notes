@@ -959,4 +959,25 @@ $f(\frac{2k+1}{2})=1$となる．
 \end{enumerate}
 \end{proof}
 
+\begin{qst}
+任意の$n\in\mathbb{N}$に対して$n,n+1$は互いに素であることを示せ．
+\end{qst}
+\begin{proof}
+$n,n+1$が互いに素でないと仮定すると，ある1でない正の約数$m$が存在して，
+$k,k'\in\mathbb{N}$を用いて$n=mk,n+1=mk'$と表せる．このとき
+$mk'=n+1>n=mk$より$k'>k$であり，かつ$1=(n+1)-n=m(k'-k)$が成り立つ．
+ところが，$m\in\mathbb{N}$は1より大きく，かつ$k'-k\in\mathbb{N}$であるから
+$1=m(k'-k)$は矛盾である．従って$n,n+1$は互いに素である．
+\end{proof}
+
+\begin{qst}
+素数は無限に存在することを示せ．
+\end{qst}
+\begin{proof}
+素数が有限個であると仮定すると，有限個の中で最大の素数$p$が存在する．
+このとき$n=\prod_{i=1}^pi\in\mathbb{N}$とおくと$n,n+1$は互いに素である．
+よって，$n+1$は$n=\prod_{i=1}^pi$の1を除くいかなる正の約数でも割り切れないから素数である．
+ところが$n+1>n>p$であり，$p$が最大であることに矛盾する．従って素数は無限に存在する．
+\end{proof}
+
 \end{document}
