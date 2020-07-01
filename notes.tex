@@ -980,4 +980,38 @@ $1=m(k'-k)$は矛盾である．従って$n,n+1$は互いに素である．
 ところが$n+1>n>p$であり，$p$が最大であることに矛盾する．従って素数は無限に存在する．
 \end{proof}
 
+\begin{qst}
+$(a_n)_{n\in\mathbb{Z}}$を$\mathbb{Z}$で添字付けられた実数列とする．任意の$n\in\mathbb{Z}$に対し
+\[ a_n=\frac{a_{n-1}+a_{n+1}}{2} \]
+が成り立つとき，$i<j<k$を満たす$i,j,k\in\mathbb{Z}$に対して
+\[ a_j=\frac{k-j}{k-i}a_i+\frac{j-i}{k-i}a_k \]
+が成り立つことを示せ．
+\end{qst}
+\begin{proof}
+$d=a_1-a_0$とおくと，任意の$j\in\mathbb{Z}$に対して仮定より$a_{j+1}-a_j=a_j-a_{j-1}=d$である．
+よって，$m,n\in\mathbb{N}$を用いて$i=j-m,k=j+n$と書くと
+\begin{align*}
+a_i&=a_j-(a_j-a_{j-m})=a_j-\sum_{l=1}^m(a_{j-l+1}-a_{j-l})=a_j-md，\\
+a_k&=a_j+(a_{j+n}-a_j)=a_j+\sum_{l=1}^n(a_{j+l}-a_{j+l-1})=a_j+nd
+\end{align*}
+となる．従って
+\[
+\frac{k-j}{k-i}a_i+\frac{j-i}{k-i}a_k=\frac{n}{m+n}(a_j-md)+\frac{m}{m+n}(a_j+nd)=a_j
+\]
+である．
+\end{proof}
+
+\begin{qst}
+関数$f\colon\mathbb{R}\to\mathbb{R}$および$a\in\mathbb{R}$が，任意の$\varepsilon>0$に対して
+\[ f(a)=\frac{f(a-\varepsilon)+f(a+\varepsilon)}{2} \]
+を満たすとき，$f$は$a$において連続と言えるか．言える場合は証明し，言えない場合は反例を挙げよ．
+\end{qst}
+\begin{proof}
+言えない．実際
+\[ f(x)=\begin{cases}-1 & (x<0) \\ 0 & (x=0) \\ 1 & (x>0)\end{cases} \]
+とおくと，$a=0$および任意の$\varepsilon>0$に対して
+\[ \frac{f(0-\varepsilon)+f(0+\varepsilon)}{2}=\frac{-1+1}{2}=0=f(0) \]
+を満たすが，$f$は0において連続ではない．
+\end{proof}
+
 \end{document}
