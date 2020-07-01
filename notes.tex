@@ -981,7 +981,7 @@ $1=m(k'-k)$は矛盾である．従って$n,n+1$は互いに素である．
 \end{proof}
 
 \begin{qst}
-$(a_n)_{n\in\mathbb{Z}}$を$\mathbb{Z}$で添字付けられた実数列とする．任意の$n\in\mathbb{Z}$に対し
+$\{a_n\}_{n\in\mathbb{Z}}$を$\mathbb{Z}$で添字付けられた実数列とする．任意の$n\in\mathbb{Z}$に対し
 \[ a_n=\frac{a_{n-1}+a_{n+1}}{2} \]
 が成り立つとき，$i<j<k$を満たす$i,j,k\in\mathbb{Z}$に対して
 \[ a_j=\frac{k-j}{k-i}a_i+\frac{j-i}{k-i}a_k \]
@@ -1012,6 +1012,32 @@ a_k&=a_j+(a_{j+n}-a_j)=a_j+\sum_{l=1}^n(a_{j+l}-a_{j+l-1})=a_j+nd
 とおくと，$a=0$および任意の$\varepsilon>0$に対して
 \[ \frac{f(0-\varepsilon)+f(0+\varepsilon)}{2}=\frac{-1+1}{2}=0=f(0) \]
 を満たすが，$f$は0において連続ではない．
+\end{proof}
+
+\begin{qst}
+$\{a_n\}_{n=1}^\infty$を実数列とする．次の問いに答えよ．
+\begin{enumerate}
+\item $\displaystyle\lim_{n\to\infty}a_n=0$ならば，$\displaystyle\sum_{k=1}^\infty a_{n_k}<\infty$を
+満たす部分列$\{a_{n_k}\}_{k=1}^\infty$が存在することを示せ．
+\item $\displaystyle\sum_{k=1}^\infty a_{n_k}<\infty$を
+満たす部分列$\{a_{n_k}\}_{k=1}^\infty$が存在するとき，$\displaystyle\lim_{n\to\infty}a_n=0$は成り立つか．
+成り立つ場合は証明し，成り立たない場合は反例を挙げよ．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+\begin{enumerate}
+\item
+仮定より$|a_{n_1}|<1$を満たす$n_1\in\mathbb{N}$が存在する．さらに，各$k=2,3,\cdots$に対して
+$|a_{n_k}|<\frac{1}{k^2}$かつ$n_k>n_{k-1}$を満たす$n_k\in\mathbb{N}$が存在する．このとき
+\[ \sum_{k=1}^\infty|a_{n_k}|<\sum_{k=1}^\infty\frac{1}{k^2}=\frac{\pi^2}{6} \]
+であるから，$\displaystyle\sum_{k=1}^\infty a_{n_k}$は絶対収束する．
+従って，特に$\displaystyle\sum_{k=1}^\infty a_{n_k}<\infty$が成り立つ．
+\item
+成り立たない．実際，$\{a_n\}_{n=1}^\infty$を
+\[ a_n=\begin{cases}n & (n\text{は奇数}) \\ 0 & (n\text{は偶数})\end{cases} \]
+により定めると，部分列$\{a_{2k}\}_{k=1}^\infty$に対し$\displaystyle\sum_{k=1}^\infty a_{2k}=0$
+が成り立つが，$\{a_n\}_{n=1}^\infty$は発散(振動)する．
+\end{enumerate}
 \end{proof}
 
 \end{document}
