@@ -1040,4 +1040,93 @@ $|a_{n_k}|<\frac{1}{k^2}$かつ$n_k>n_{k-1}$を満たす$n_k\in\mathbb{N}$が存
 \end{enumerate}
 \end{proof}
 
+\begin{qst}
+次の問いに答えよ．
+\begin{enumerate}
+\item $x\mapsto e^x$は$\mathbb{R}$上一様連続でないことを示せ．
+\item 任意の$x\in\mathbb{R}$に対して$|\sin x|\leq|x|$が成り立つことを示せ．
+\item $x\mapsto \sin x$，$x\mapsto \cos x$は$\mathbb{R}$上一様連続であることを示せ．
+\item $x\mapsto e^{ix}$は$\mathbb{R}$上一様連続であることを示せ．
+\end{enumerate}
+\end{qst}
+\begin{proof}
+\begin{enumerate}
+\item
+$\varepsilon=1$とする．任意の$\delta>0$に対して$K=e^{\delta/2}-1>0$とおき，
+$Ke^a\geq\varepsilon$となるような$a\in\mathbb{R}$をとる．
+このとき，$x=a+\frac{\delta}{2},y=a$とすると，$|x-y|=\frac{\delta}{2}<\delta$となるが
+$|e^x-e^y|=Ke^a\geq\varepsilon$となる．従って，$x\mapsto e^x$は$\mathbb{R}$上一様連続でない．
+
+\item
+任意の$x\in\mathbb{R}$に対して$|\sin x|\leq 1$であるから，
+$|x|\geq1$を満たす$x\in\mathbb{R}$に対して不等式は成り立つ．
+以下，$|x|<1$を満たす$x\in\mathbb{R}$に対して不等式が成り立つことを示す．
+$0\leq x<1$のとき，$n\in\mathbb{N}$に対して
+\[
+a_n=\frac{(-1)^nx^{2n+1}}{(2n+1)!}
+\]
+とおくと，$\{a_n\}_{n=1}^\infty$は$|a_{n+1}|\leq|a_n|$を満たす．
+よって，$k\in\mathbb{N}$に対して
+\begin{align*}
+\sum_{n=1}^{2k-1}a_n&=
+\begin{cases}
+\sum_{n=1}^{k-1}(a_{2n-1}+a_{2n})+a_{2k-1}\leq0, \\
+a_1+\sum_{n=1}^{k-1}(a_{2n}+a_{2n+1})\geq a_1,
+\end{cases} \\
+\sum_{n=1}^{2k}a_n&=
+\begin{cases}
+\sum_{n=1}^k(a_{2n-1}+a_{2n})\leq0, \\
+a_1+\sum_{n=1}^{k-1}(a_{2n}+a_{2n+1})+a_{2k}\geq a_1
+\end{cases}
+\end{align*}
+であるから，任意の$k\in\mathbb{N}$に対して$\sum_{n=1}^ka_n\in[a_1,0]$が成り立つ．ゆえに
+\[
+\sin x-x=\sum_{n=1}^\infty a_n\in[a_1,0]
+\]
+となるから，特に$\sin x\leq x$すなわち$|\sin x|\leq|x|$が成り立つ．
+一方，$-1<x<0$のときは，$0<-x<1$であるから
+\[ |\sin x|=|{-\sin(-x)}|=|\sin(-x)|\leq|{-x}|=|x| \]
+とすることで結論が得られる．
+
+\item
+$x,y\in\mathbb{R}$に対して，2より
+\[
+|\sin x-\sin y|=\left|2\cos\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\right|
+\leq2\left|\sin\left(\frac{x-y}{2}\right)\right|\leq2\left|\frac{x-y}{2}\right|=|x-y|
+\]
+が成り立つ．よって，任意の$\varepsilon>0$に対して$\delta=\varepsilon/2>0$とすれば，
+$|x-y|<\delta$を満たす任意の$x,y\in\mathbb{R}$に対して$|\sin x-\sin y|\leq|x-y|<\varepsilon$となる．
+従って，$x\mapsto \sin x$は$\mathbb{R}$上一様連続である．
+また，$x,y\in\mathbb{R}$に対して，2より
+\[
+|\cos x-\cos y|=\left|-2\sin\left(\frac{x+y}{2}\right)\sin\left(\frac{x-y}{2}\right)\right|
+\leq2\left|\sin\left(\frac{x-y}{2}\right)\right|\leq2\left|\frac{x-y}{2}\right|=|x-y|
+\]
+が成り立つ．よって，任意の$\varepsilon>0$に対して$\delta=\varepsilon/2>0$とすれば，
+$|x-y|<\delta$を満たす任意の$x,y\in\mathbb{R}$に対して$|\cos x-\cos y|\leq|x-y|<\varepsilon$となる．
+従って，$x\mapsto \cos x$は$\mathbb{R}$上一様連続である．
+
+(注)この証明から$x\mapsto \sin x$，$x\mapsto \cos x$は$\mathbb{R}$上Lipschitz連続であることがわかる．
+一般に，Lipschitz連続ならば一様連続である．
+
+\item
+$e^{ix}=\cos x+i\sin x$であるから，$x,y\in\mathbb{R}$に対して
+\[
+|e^{ix}-e^{iy}|=|(\cos x-\cos y)+i(\sin x-\sin y)|\leq|\cos x-\cos y|+|\sin x-\sin y|
+\]
+である．3より，任意の$\varepsilon>0$に対しある$\delta_1,\delta_2>0$が存在して，
+すべての$x,y\in\mathbb{R}$に対し
+\[
+|x-y|<\delta_1\Rightarrow|\sin x-\sin y|<\frac{\varepsilon}{2}，
+|x-y|<\delta_2\Rightarrow|\cos x-\cos y|<\frac{\varepsilon}{2}
+\]
+が成り立つ．そこで$\delta=\min\{\delta_1,\delta_2\}>0$とおくと，$x,y\in\mathbb{R}$に対して
+\[
+|x-y|<\delta\Rightarrow|e^{ix}-e^{iy}|\leq|\cos x-\cos y|+|\sin x-\sin y|
+<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon
+\]
+となる．従って，$x\mapsto e^{ix}$は$\mathbb{R}$上一様連続である．
+\end{enumerate}
+\end{proof}
+
 \end{document}
