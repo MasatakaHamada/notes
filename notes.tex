@@ -1129,4 +1129,16 @@ $e^{ix}=\cos x+i\sin x$であるから，$x,y\in\mathbb{R}$に対して
 \end{enumerate}
 \end{proof}
 
+\begin{qst}
+正の実数の非可算和は有限でないことを示せ．
+\end{qst}
+\begin{proof}
+$B\subset(0,\infty)$とし，$n\in\mathbb{N}$に対して$B_n=\{x\in B:nx>1\}$とおくと
+$B=\bigcup_{n=1}^\infty B_n$である．このとき，各$n\in\mathbb{N}$に対して
+\[ \sum_{x\in B}x\geq\sum_{x\in B_n}x\geq\sum_{x\in B_n}\frac{1}{n}=\frac{|B_n|}{n} \]
+となる．よって，$\sum_{x\in B}x$が有限ならば，各$n\in\mathbb{N}$に対し$B_n$は有限集合であるから，
+$B=\bigcup_{n=1}^\infty B_n$は高々可算な集合である．
+従って，$B$が非可算集合ならば$\sum_{x\in B}x$は有限でないことがわかる．
+\end{proof}
+
 \end{document}
