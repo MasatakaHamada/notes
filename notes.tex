@@ -1141,4 +1141,27 @@ $B=\bigcup_{n=1}^\infty B_n$は高々可算な集合である．
 従って，$B$が非可算集合ならば$\sum_{x\in B}x$は有限でないことがわかる．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+$A_1,A_2,\cdots\in\mathcal{F}$に対し，$P(A_n)=1$を満たす$n\in\mathbb{N}$が存在するならば
+$P(\bigcup_{n=1}^\infty A_n)=1$であることを示せ．
+\end{qst}
+\begin{proof}
+$N\in\mathbb{N}$が$P(A_N)=1$を満たすとすると，
+$P((\bigcup_{n=1}^\infty A_n)^c)=P(\bigcap_{n=1}^\infty A_n^c)\leq P(A_N^c)=0$より
+$P((\bigcup_{n=1}^\infty A_n)^c)=0$であるから
+$P(\bigcup_{n=1}^\infty A_n)=1$となる．
+\end{proof}
+
+\begin{qst}
+複素数$\sqrt{i}$の実部および虚部を求めよ．ただし，実部は正の数とする．
+\end{qst}
+\begin{proof}
+$\sqrt{i}=a+bi\ (a,b\in\mathbb{R})$とおく．このとき$i=(a+bi)^2=(a^2-b^2)+2abi$であるから
+$(a+b)(a-b)=0$かつ$2ab=1$である．$(a+b)(a-b)=0$より$a=-b$または$a=b$である．
+$a=-b$のとき，$2ab=1$より$-2b^2=1$となるが，これを満たす$b\in\mathbb{R}$は存在しない．
+$a=b$のときは，$2ab=1$より$2a^2=1$となるが，仮定より$a>0$であるから$a=\frac{1}{\sqrt{2}}$である．
+従って，$\sqrt{i}$の実部，虚部はともに$\frac{1}{\sqrt{2}}$である．
+\end{proof}
+
 \end{document}
