@@ -1169,4 +1169,24 @@ $a=b$のときは，$2ab=1$より$2a^2=1$となるが，仮定より$a>0$であ�
 従って，$\sqrt{i}$の実部，虚部はともに$\frac{1}{\sqrt{2}}$である．
 \end{proof}
 
+\begin{qst}
+$(\Omega,\mathcal{F},P)$を確率空間とする．
+確率測度の定義に従って，$A,B\in\mathcal{F}$に対し$P(A\cup B)=P(A)+P(B)-P(A\cap B)$が成り立つことを示せ．
+\end{qst}
+\begin{proof}
+$P(A\cup B)+P(A\cap B)=P(A)+P(B)$を示せばよい．
+$A\cup B=(A\setminus B)\cup(B\setminus A)\cup(A\cap B)$であり，
+$A\setminus B, B\setminus A, A\cap B$は互いに素であるから
+$P(A\cup B)=P(A\setminus B)+P(B\setminus A)+P(A\cap B)$が成り立つ．
+一方，$A=(A\setminus B)\cup(A\cap B), B=(B\setminus A)\cup(A\cap B)$であるから
+$P(A)=P(A\setminus B)+P(A\cap B), P(B)=P(B\setminus A)+P(A\cap B)$が成り立つ．以上より
+\begin{align*}
+P(A\cup B)+P(A\cap B)
+&=P(A\setminus B)+P(B\setminus A)+2P(A\cap B) \\
+&=\{P(A\setminus B)+P(A\cap B)\}+\{P(B\setminus A)+P(A\cap B)\} \\
+&=P(A)+P(B)
+\end{align*}
+となり，結論を得る．
+\end{proof}
+
 \end{document}
